@@ -14,7 +14,7 @@ document.getElementById("displayButton").addEventListener("click", function () {
     code: code,
   };
 
-  fetch("http://localhost:3000/analyze", {
+  fetch("https://ai-code-analysis.vercel.app/analyze", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
