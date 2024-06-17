@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Code Display Extension",
+  "name": "AI Code Analysis",
   "version": "1.0",
-  "description": "An extension that takes code input and displays it.",
+  "description": "An extension that takes code input and return it's Time and Space Complexity Analysis. ",
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
