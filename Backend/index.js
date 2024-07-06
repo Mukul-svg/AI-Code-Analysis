@@ -58,7 +58,7 @@ app.post('/analyze', async (req, res) => {
       history: [],
     });
 
-    const result = await chat.sendMessage(`Here is a function code- ${code}, return the time and space complexity of this code with as short explaination as possible.`);
+    const result = await chat.sendMessage(`Here is a function code- ${code}, return only the time and space complexity of this code. Do not return the Code back, keep the response as short as possible.`);
     const response = result.response;
 
     res.json({ analysis: response.text() });
