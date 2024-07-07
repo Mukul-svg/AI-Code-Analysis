@@ -1,6 +1,18 @@
 document.getElementById("displayButton").addEventListener("click", function () {
   const codeInput = document.getElementById("codeInput").value;
   const codeDisplay = document.getElementById("codeDisplay");
+  const loaderContainer = document.getElementById("loaderContainer"); // Loader container element
+
+  codeDisplay.textContent = "";
+  loaderContainer.style.display = "none";// hide loader initially
+
+  // no loader when there's no codeInput
+  if (!codeInput.trim()) {
+    return; 
+  }
+
+  // Showing loader only while fetching data
+  loaderContainer.style.display = "flex";
 
   // Escape HTML characters to prevent XSS attacks
   const escapedCode = codeInput
@@ -28,5 +40,9 @@ document.getElementById("displayButton").addEventListener("click", function () {
     })
     .catch((error) => {
       console.error("Error:", error);
+    })
+    .finally(() => {
+      // Hiding loader after data is fetched
+      loaderContainer.style.display = "none";
     });
 });
